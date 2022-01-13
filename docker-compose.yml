@@ -6,5 +6,7 @@ services:
       - virtualdb:/etc/postfix/virtualdb
   dovecot:
     build: dovecot
+    volumes:
+      - virtualdb:/etc/dovecot/virtualdb
 volumes:
   virtualdb: {}
