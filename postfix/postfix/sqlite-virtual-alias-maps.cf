@@ -1,0 +1,2 @@
+dbpath = /etc/postfix/virtualdb/mailserver.db
+query = SELECT destination FROM virtual_aliases WHERE source='%s'

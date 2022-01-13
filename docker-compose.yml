@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  postfix:
+    build: postfix
+    volumes:
+      - virtualdb:/etc/postfix/virtualdb
+volumes:
+  virtualdb: {}
