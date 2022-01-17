@@ -1,7 +1,12 @@
 FROM alpine:latest
 
 # Install Dovecot.
-RUN apk add dovecot dovecot-sqlite
+RUN apk add \
+    dovecot \
+    dovecot-sqlite \
+    dovecot-lmtpd \
+    dovecot-pop3d \
+    dovecot-pigeonhole-plugin
 
 # Copy over config files.
 COPY dovecot/dovecot-sql.conf.ext /etc/dovecot/

@@ -11,5 +11,7 @@ RUN postconf virtual_mailbox_domains=sqlite:/etc/postfix/sqlite-virtual-mailbox-
     postconf virtual_mailbox_maps=sqlite:/etc/postfix/sqlite-virtual-mailbox-maps.cf && \
     postconf virtual_alias_maps=sqlite:/etc/postfix/sqlite-virtual-alias-maps.cf
 
+RUN postconf virtual_transport=lmtp:unix:private/dovecot-lmtp
+
 # Start Postfix.
 CMD ["postfix", "start-fg"]

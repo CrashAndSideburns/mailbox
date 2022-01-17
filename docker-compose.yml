@@ -4,9 +4,12 @@ services:
     build: postfix
     volumes:
       - virtualdb:/etc/postfix/virtualdb
+      - private:/var/spool/postfix/private
   dovecot:
     build: dovecot
     volumes:
       - virtualdb:/etc/dovecot/virtualdb
+      - private:/var/spool/postfix/private
 volumes:
   virtualdb: {}
+  private: {}
